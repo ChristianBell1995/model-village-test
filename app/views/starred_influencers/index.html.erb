@@ -1,0 +1,24 @@
+<h2>Starred Influencers</h2>
+<!-- This will be the Suggested Influencer Column -->
+<% @influencers.each do |influencer| %>
+  <div>
+    <%= influencer.influencer_full_name %>
+    <%= influencer.influencer_instagram_username %>
+    <%= influencer.influencer_instagram_profile_image %>
+    <i class="fas fa-plus"></i>
+    <%= link_to "", new_influencer_starred_influencer_path(influencer), class: "fas fa-plus" %>
+  </div>
+<% end %>
+
+<!-- This will be the Starred Influencer Column -->
+
+<% @starred_influencers.each do |starred_influencer| %>
+  <div>
+    <%= starred_influencer.influencer.influencer_full_name %>
+    <%= starred_influencer.influencer.influencer_instagram_username %>
+    <%= starred_influencer.influencer.influencer_instagram_profile_image %>
+    <%= starred_influencer.influencer.statistics_followers %>
+    <%= starred_influencer.influencer.statistics_engagement %>
+    <%= link_to "Delete", starred_influencer_path(starred_influencer), method: 'delete' %>
+  </div>
+<% end %>

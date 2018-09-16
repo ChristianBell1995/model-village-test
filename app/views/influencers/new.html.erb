@@ -1,0 +1,7 @@
+
+<h3>new influencer</h3>
+<%= simple_form_for(@influencer) do |f| %>
+  <%= f.input :influencer_full_name, label: 'What\'s your name' %>
+  <%= f.input :influencer_instagram_username, label: 'What\'s your Instagram name' %>
+  <%= f.button :submit %>
+<% end %>

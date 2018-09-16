@@ -1,0 +1,13 @@
+<h3>Influencers Index</h3>
+<% @influencers.each do |influencer| %>
+  <div>
+    <%= influencer.influencer_full_name %>
+    <%= influencer.influencer_instagram_username %>
+    <%= influencer.influencer_instagram_profile_image %>
+    <i class="fas fa-plus"></i>
+    <%= link_to "Influencer Show page", influencer_path(influencer) %>
+  </div>
+<% end %>
+
+<%= link_to "Starred Influencers", starred_influencers_path %>
+<%= link_to "New Influencer", new_influencer_path %>

@@ -1,24 +1,50 @@
-<h2>Starred Influencers</h2>
 <!-- This will be the Suggested Influencer Column -->
-<% @influencers.each do |influencer| %>
-  <div>
-    <%= influencer.influencer_full_name %>
-    <%= influencer.influencer_instagram_username %>
-    <%= influencer.influencer_instagram_profile_image %>
-    <i class="fas fa-plus"></i>
-    <%= link_to "", new_influencer_starred_influencer_path(influencer), class: "fas fa-plus" %>
-  </div>
-<% end %>
 
-<!-- This will be the Starred Influencer Column -->
-
-<% @starred_influencers.each do |starred_influencer| %>
-  <div>
-    <%= starred_influencer.influencer.influencer_full_name %>
-    <%= starred_influencer.influencer.influencer_instagram_username %>
-    <%= starred_influencer.influencer.influencer_instagram_profile_image %>
-    <%= starred_influencer.influencer.statistics_followers %>
-    <%= starred_influencer.influencer.statistics_engagement %>
-    <%= link_to "Delete", starred_influencer_path(starred_influencer), method: 'delete' %>
+<div class="infl-container">
+  <div class="suggested-infl">
+    <div class="infl-header">
+      <h3>Suggested Influencers</h3>
+    </div>
+      <% @influencers.each do |influencer| %>
+        <div class="suggested-infl-row">
+          <div class="infl-avatar-border">
+            <%= image_tag "#{influencer.influencer_instagram_profile_image}", class: 'infl-avatar' %>
+          </div>
+          <div class="infl-fullname">
+            <h4><%= influencer.influencer_full_name %></h4>
+            <p><i class="fab fa-instagram"></i><%= "  #{influencer.influencer_instagram_username}" %></p>
+          </div>
+        <%= link_to "", new_influencer_starred_influencer_path(influencer), class: "fas fa-plus infl-icon" %>
+        </div>
+      <% end %>
   </div>
-<% end %>
+
+  <!-- This will be the Starred Influencer Column -->
+
+  <div class="starred-infl">
+    <div class="infl-header">
+      <h3>Starred Influencers</h3>
+      <h4>Sort By:</h4>
+    </div>
+      <% @starred_influencers.each do |starred_influencer| %>
+        <div class="starred-infl-row">
+            <div class="infl-avatar-border">
+              <%= image_tag "#{starred_influencer.influencer.influencer_instagram_profile_image}", class: 'infl-avatar' %>
+            </div>
+            <div class="infl-fullname">
+              <h4><%= starred_influencer.influencer.influencer_full_name %></h4>
+              <p><i class="fab fa-instagram"></i><%= "  #{starred_influencer.influencer.influencer_instagram_username}" %></p>
+            </div>
+            <div class="infl-statistics">
+              <h4><%= starred_influencer.influencer.statistics_followers %></h4>
+              <p>Followers</p>
+            </div>
+            <div class="infl-statistics">
+              <h4><%= starred_influencer.influencer.statistics_engagement %>%</h4>
+              <p>Engagement</p>
+            </div>
+          <%= link_to "Delete", starred_influencer_path(starred_influencer), method: 'delete' %>
+        </div>
+      <% end %>
+  </div>
+</div>

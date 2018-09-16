@@ -1,0 +1,82 @@
+.infl-container {
+  display: flex;
+  padding: 24px;
+  p {
+    color: #cccccc;
+  }
+  a {
+    color: #cccccc;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #a8a8a8;
+  }
+}
+
+.suggested-infl {
+  flex: 0 0 30%;
+  border-right: 1px #cccccc dashed;
+  padding: 0 12px;
+}
+
+.starred-infl {
+  flex: 0 0 70%;
+  padding: 0 12px;
+
+}
+
+.infl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.suggested-infl-row {
+  display: flex;
+  align-items: center;
+  margin: 12px;
+
+}
+
+.starred-infl-row {
+  display: flex;
+  align-items: center;
+  margin: 12px;
+  background-color: #fcfcfc;
+  border: 1px solid #EFECEC;
+  border-radius: 50px 0px 0px 50px;
+  height: 74px;
+}
+
+.infl-avatar {
+  border-radius: 50%;
+  width: 68px;
+  height: 68px;
+}
+
+.infl-avatar-border {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to right, #6b81ff, #ffa5e5);
+  height: 74px;
+  width: 74px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.infl-fullname {
+  flex: 0 0 60%;
+  padding: 6px;
+}
+
+.infl-statistics {
+  flex: 0 0 10%;
+  padding: 8px;
+}
+
+.infl-icon {
+  flex: 0 0 20%;
+}

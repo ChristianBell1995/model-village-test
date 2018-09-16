@@ -28,5 +28,4 @@ ActiveRecord::Schema.define(version: 2018_09_16_093046) do
     t.datetime "updated_at", null: false
     t.index ["influencer_id"], name: "index_starred_influencers_on_influencer_id"
   end
-
 end

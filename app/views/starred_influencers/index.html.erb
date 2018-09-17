@@ -25,6 +25,18 @@
     <div class="infl-header">
       <h3>Starred Influencers</h3>
       <h4>Sort By:</h4>
+      <div class="dropdown">
+        <button class="infl-dropdown btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Dropdown
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= sortable "statistics_engagement", "desc", "Engagement (High-Low)" %></li>
+          <li><%= sortable "statistics_engagement", "asc", "Engagement (Low-High)" %></li>
+          <li><%= sortable "statistics_followers", "desc", "Followers (High-Low)" %></li>
+          <li><%= sortable "statistics_followers", "asc", "Followers (Low-High)" %></li>
+        </ul>
+      </div>
     </div>
       <% @starred_influencers.each do |starred_influencer| %>
         <div class="starred-infl-row">
@@ -48,3 +60,15 @@
       <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

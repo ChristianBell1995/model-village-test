@@ -15,7 +15,7 @@
               <h4><%= influencer.influencer_full_name %></h4>
               <p><i class="fab fa-instagram"></i><%= "  #{influencer.influencer_instagram_username}" %></p>
             </div>
-          <%= link_to "", new_influencer_starred_influencer_path(influencer), class: "fas fa-plus infl-icon" %>
+          <%= link_to "", influencer_starred_influencers_path(influencer_id: influencer.id), method: :post, class: "fas fa-plus infl-icon" %>
           </div>
         <% end %>
       <% end %>
@@ -29,11 +29,11 @@
       <div class="infl-header-dropdown">
         <h5>Sort By:</h5>
         <div class="dropdown">
-          <button class="infl-dropdown btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <button class="infl-dropdown btn btn-default dropdown-toggle" type="button" id="drop-down-menu-text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Dropdown
             <span class="caret infl-arrow"></span>
           </button>
-          <ul class="dropdown-menu" id="dropDownUl" aria-labelledby="dropdownMenu1">
+          <ul class="dropdown-menu" id="drop-down-ul" aria-labelledby="dropdownMenu1">
             <li><%= sortable "statistics_engagement", "desc", "Engagement (High-Low)" %></li>
             <li><%= sortable "statistics_engagement", "asc", "Engagement (Low-High)" %></li>
             <li><%= sortable "statistics_followers", "desc", "Followers (High-Low)" %></li>

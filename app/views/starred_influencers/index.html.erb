@@ -26,43 +26,46 @@
   <div class="starred-infl">
     <div class="infl-header">
       <h3>Starred Influencers</h3>
-      <h4>Sort By:</h4>
-      <div class="dropdown">
-        <button class="infl-dropdown btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Dropdown
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><%= sortable "statistics_engagement", "desc", "Engagement (High-Low)" %></li>
-          <li><%= sortable "statistics_engagement", "asc", "Engagement (Low-High)" %></li>
-          <li><%= sortable "statistics_followers", "desc", "Followers (High-Low)" %></li>
-          <li><%= sortable "statistics_followers", "asc", "Followers (Low-High)" %></li>
-        </ul>
+      <div class="infl-header-dropdown">
+        <h5>Sort By:</h5>
+        <div class="dropdown">
+          <button class="infl-dropdown btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+            <span class="caret infl-arrow"></span>
+          </button>
+          <ul class="dropdown-menu" id="dropDownUl" aria-labelledby="dropdownMenu1">
+            <li><%= sortable "statistics_engagement", "desc", "Engagement (High-Low)" %></li>
+            <li><%= sortable "statistics_engagement", "asc", "Engagement (Low-High)" %></li>
+            <li><%= sortable "statistics_followers", "desc", "Followers (High-Low)" %></li>
+            <li><%= sortable "statistics_followers", "asc", "Followers (Low-High)" %></li>
+          </ul>
+        </div>
       </div>
     </div>
       <% @starred_influencers.each do |starred_influencer| %>
-        <div class="starred-infl-row">
-            <div class="infl-avatar-border">
-              <%= image_tag "#{starred_influencer.influencer.influencer_instagram_profile_image}", class: 'infl-avatar' %>
-            </div>
-            <div class="infl-fullname">
-              <h4><%= starred_influencer.influencer.influencer_full_name %></h4>
-              <p><i class="fab fa-instagram"></i><%= "  #{starred_influencer.influencer.influencer_instagram_username}" %></p>
-            </div>
-            <div class="infl-statistics">
-              <h4><%= starred_influencer.influencer.statistics_followers %></h4>
-              <p>Followers</p>
-            </div>
-            <div class="infl-statistics">
-              <h4><%= starred_influencer.influencer.statistics_engagement %>%</h4>
-              <p>Engagement</p>
-            </div>
-          <%= link_to "Delete", starred_influencer_path(starred_influencer), method: 'delete' %>
+        <div class="starred-infl-container">
+          <div class="starred-infl-row">
+              <div class="infl-avatar-border">
+                <%= image_tag "#{starred_influencer.influencer.influencer_instagram_profile_image}", class: 'infl-avatar' %>
+              </div>
+              <div class="infl-fullname">
+                <h4><%= starred_influencer.influencer.influencer_full_name %></h4>
+                <p><i class="fab fa-instagram"></i><%= "  #{starred_influencer.influencer.influencer_instagram_username}" %></p>
+              </div>
+              <div class="infl-statistics">
+                <h4><%= starred_influencer.influencer.statistics_followers %></h4>
+                <p>Followers</p>
+              </div>
+              <div class="infl-statistics">
+                <h4><%= starred_influencer.influencer.statistics_engagement %>%</h4>
+                <p>Engagement</p>
+              </div>
+          </div>
+          <%= link_to "", starred_influencer_path(starred_influencer), method: 'delete', class: "fas fa-times"%>
         </div>
       <% end %>
   </div>
 </div>
-
 
 
 

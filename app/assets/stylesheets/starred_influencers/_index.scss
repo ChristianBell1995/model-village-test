@@ -1,6 +1,21 @@
 .infl-container {
   display: flex;
   padding: 24px;
+  h3 {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 6px;
+  }
+  h5 {
+    padding: 12px;
+    font-weight: lighter;
+    font-size: 16px;
+    color: #cccccc;
+  }
   p {
     color: #cccccc;
   }
@@ -30,6 +45,13 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
+  margin-left: 12px;
+}
+
+.infl-header-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .suggested-infl-row {
@@ -39,7 +61,17 @@
 
 }
 
+.starred-infl-container {
+  display: flex;
+  align-items: center;
+  a {
+    padding: 12px;
+    font-size: 24px;
+  }
+}
+
 .starred-infl-row {
+  flex: 0 0 90%;
   display: flex;
   align-items: center;
   margin: 12px;
@@ -73,7 +105,7 @@
 }
 
 .infl-statistics {
-  flex: 0 0 10%;
+  flex: 0 0 13%;
   padding: 8px;
 }
 
@@ -82,5 +114,13 @@
 }
 
 .infl-dropdown {
-  width: 100px;
+  font-weight: bold;
+  color: #999999 !important;
+  width: 160px !important;
+}
+
+.infl-arrow {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }

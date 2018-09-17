@@ -23,6 +23,9 @@ class StarredInfluencersController < ApplicationController
 
   def destroy
     @starred_influencer = StarredInfluencer.find(params[:id])
+    @influencer = Influencer.find(@starred_influencer.influencer_id)
+    @influencer.starred = false
+    @influencer.save
     @starred_influencer.destroy
     redirect_to starred_influencers_path
   end

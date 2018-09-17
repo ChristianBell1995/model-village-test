@@ -4,4 +4,3 @@ module ApplicationHelper
     link_to title, sort: column, direction: direction
   end
 end
-

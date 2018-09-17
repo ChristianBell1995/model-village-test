@@ -15,6 +15,9 @@ class StarredInfluencersController < ApplicationController
     # Not sure if i need strong params here as no data being passed
     @starred_influencer.influencer = @influencer
     @starred_influencer.save
+    @influencer.starred = true
+    @influencer.save
+
     redirect_to starred_influencers_path
   end
 

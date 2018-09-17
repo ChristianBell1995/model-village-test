@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_093046) do
+ActiveRecord::Schema.define(version: 2018_09_17_125944) do
 
   create_table "influencers", force: :cascade do |t|
     t.string "influencer_full_name"
     t.string "influencer_instagram_username"
     t.string "influencer_instagram_profile_image"
     t.integer "statistics_followers"
-    t.integer "statistics_engagement"
+    t.float "statistics_engagement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "starred"
   end
 
   create_table "starred_influencers", force: :cascade do |t|
@@ -28,4 +29,5 @@ ActiveRecord::Schema.define(version: 2018_09_16_093046) do
     t.datetime "updated_at", null: false
     t.index ["influencer_id"], name: "index_starred_influencers_on_influencer_id"
   end
+
 end

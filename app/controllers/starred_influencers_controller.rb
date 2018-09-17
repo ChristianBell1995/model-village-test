@@ -3,7 +3,7 @@ class StarredInfluencersController < ApplicationController
 
   def index
     @influencers = Influencer.all
-    @starred_influencers = StarredInfluencer.all
+    @starred_influencers = StarredInfluencer.joins(:influencer).includes(:influencer).order("#{sort_influencers} #{sort_direction}")
   end
 
   def new
@@ -28,5 +28,13 @@ class StarredInfluencersController < ApplicationController
 
   def find_influencer
     @influencer = Influencer.find(params[:influencer_id])
+  end
+
+  def sort_influencers
+    params[:sort] || 'influencer_full_name'
+  end
+
+  def sort_direction
+    params[:direction] || 'asc'
   end
 end

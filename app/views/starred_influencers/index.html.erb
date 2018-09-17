@@ -6,16 +6,18 @@
       <h3>Suggested Influencers</h3>
     </div>
       <% @influencers.each do |influencer| %>
-        <div class="suggested-infl-row">
-          <div class="infl-avatar-border">
-            <%= image_tag "#{influencer.influencer_instagram_profile_image}", class: 'infl-avatar' %>
+        <% if !influencer.starred %>
+          <div class="suggested-infl-row">
+            <div class="infl-avatar-border">
+              <%= image_tag "#{influencer.influencer_instagram_profile_image}", class: 'infl-avatar' %>
+            </div>
+            <div class="infl-fullname">
+              <h4><%= influencer.influencer_full_name %></h4>
+              <p><i class="fab fa-instagram"></i><%= "  #{influencer.influencer_instagram_username}" %></p>
+            </div>
+          <%= link_to "", new_influencer_starred_influencer_path(influencer), class: "fas fa-plus infl-icon" %>
           </div>
-          <div class="infl-fullname">
-            <h4><%= influencer.influencer_full_name %></h4>
-            <p><i class="fab fa-instagram"></i><%= "  #{influencer.influencer_instagram_username}" %></p>
-          </div>
-        <%= link_to "", new_influencer_starred_influencer_path(influencer), class: "fas fa-plus infl-icon" %>
-        </div>
+        <% end %>
       <% end %>
   </div>
 

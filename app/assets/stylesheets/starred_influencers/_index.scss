@@ -1,16 +1,6 @@
 .infl-container {
   display: flex;
   padding: 24px;
-  p {
-    color: #cccccc;
-  }
-  a {
-    color: #cccccc;
-  }
-  a:hover {
-    text-decoration: none;
-    color: #a8a8a8;
-  }
 }
 
 .suggested-infl {
@@ -30,19 +20,36 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
+  margin-left: 12px;
+}
+
+.infl-header-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .suggested-infl-row {
   display: flex;
   align-items: center;
-  margin: 12px;
+  margin: 6px;
 
 }
 
-.starred-infl-row {
+.starred-infl-container {
   display: flex;
   align-items: center;
-  margin: 12px;
+  a {
+    padding: 12px;
+    font-size: 24px;
+  }
+}
+
+.starred-infl-row {
+  flex: 0 0 90%;
+  display: flex;
+  align-items: center;
+  margin: 6px;
   background-color: #fcfcfc;
   border: 1px solid #EFECEC;
   border-radius: 50px 0px 0px 50px;
@@ -73,7 +80,7 @@
 }
 
 .infl-statistics {
-  flex: 0 0 10%;
+  flex: 0 0 13%;
   padding: 8px;
 }
 
@@ -82,5 +89,13 @@
 }
 
 .infl-dropdown {
-  width: 100px;
+  font-weight: bold;
+  color: #999999 !important;
+  width: 160px !important;
+}
+
+.infl-arrow {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }

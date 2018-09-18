@@ -19,6 +19,7 @@ class InfluencersController < ApplicationController
   end
 
   private
+
   def influencer_params
     params.require(:influencer).permit(:influencer_full_name, :influencer_instagram_username)
   end

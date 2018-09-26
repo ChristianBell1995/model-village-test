@@ -3,6 +3,7 @@ class StarredInfluencersController < ApplicationController
 
   def index
     @influencers = Influencer.all
+    # Try and refactor below method into the model
     @starred_influencers = StarredInfluencer.joins(:influencer).includes(:influencer).order("#{sort_influencers} #{sort_direction}")
   end
 

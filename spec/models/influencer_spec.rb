@@ -53,7 +53,7 @@ RSpec.describe Influencer, type: :model do
         influencer_full_name: 'Anna Griffin',
         influencer_instagram_username: 'anna_griffin_123',
         influencer_instagram_profile_image: 'https://randomuser.me/api/portraits/women/6.jpg',
-        statistics_followers: 21231,
+        statistics_followers: 21231
       )
       expect(influencer).to_not be_valid
     end
